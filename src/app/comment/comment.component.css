@@ -1,0 +1,71 @@
+.comment-box {
+    margin: 10px 0;
+    background-color: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: 1px solid #e1e1e8;
+}
+.comment-box .form-group {
+    margin: 0;
+}
+form {
+    border: 1px solid #F2F2F2;
+    -webkit-border-radius: 4px 4px 0 4px;
+    -moz-border-radius: 4px 4px 0 4px;
+    -ms-border-radius: 4px 4px 0 4px;
+    -o-border-radius: 4px 4px 0 4px;
+    border-radius: 4px 4px 0 4px;
+}
+textarea {
+    background: none repeat scroll 0 0 #fff;
+    border: medium none;
+    color: #777777;
+    float: left;
+    letter-spacing: 0.3px;
+    padding: 20px;
+    resize:none;
+    outline:none;
+
+}
+
+.form-group-footer {
+    background: #f5f5f5;
+}
+.form-group-footer .last-column {
+    padding-right: 0;
+}
+
+.form-group-footer .last-column .btn {
+    width: 100%;
+    background:#3b5998;
+    border: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    height: 34px;
+}
+
+.row-footer {
+    margin: 5em 0;
+}
+
+.user-comment {
+    margin: 1em 0;
+}
+
+.row-footer .help-block {
+    display: inline-block;
+}
+
+.row-footer .help-block.dashed {
+    border-bottom: 1px dashed #ddd;
+    margin-left: 2em;
+}
+
+.row-footer .label  {
+    background: #f5f5f5;
+    color: #737373;
+}

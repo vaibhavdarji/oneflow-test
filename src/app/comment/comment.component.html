@@ -1,0 +1,54 @@
+<div class="row">
+
+    <div class="col-md-8 comment-box">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    {{title}}
+                </h3>
+                <form id="addComment" onsubmit="return false;">
+                    <div class="form-group clearfix">
+        				<textarea placeholder="Write a comment" class="col-md-12" name="description"></textarea>
+        			</div>
+                    <div class="form-group clearfix form-group-footer">
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-6 col-md-offset-2">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h6>Send to</h6>
+                                </div>
+                                <div class="col-md-4">
+                                    <select class="form-control" name="toUser">
+                                        <option value="Test user">Test user</option>
+                                        <option value="All participant ">All participant</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-5 last-column">
+                                    <button class="btn btn-primary" (click)="addComment('addComment')">Post comment</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-12 row-footer">
+                <div class="user-comment" *ngFor="let comment of comments" (click)="onCommentSelect(comment)">
+                    <span class="help-block">From </span>
+                    <span class="label label-default">{{comment.from}}</span>
+                    <span class="help-block">to</span>
+                    <span class="label label-default">{{comment.to}}</span>
+                    <span class="help-block dashed">{{comment.hours}} hours ago</span>
+                    <h5 *ngIf="comment.subject">
+                        Subject: <span class="help-block">{{comment.subject}}</span>
+                    </h5>
+                    <p>
+                        {{comment.description}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>

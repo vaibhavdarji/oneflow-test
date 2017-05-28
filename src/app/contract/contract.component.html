@@ -1,0 +1,85 @@
+<div class="row">
+
+    <div class="col-md-8 contract-detail">
+        <h1 class="text-center">{{contract.title}}</h1>
+        <p class="lead description">{{contract.description}}</p>
+
+        <h3>Audit trail</h3>
+        <div class="text-center audit">
+            <p class="lead">
+                click to view audit trail
+                <i class="glyphicon glyphicon-chevron-down"></i>
+            </p>
+        </div>
+        <div class="settings">
+            <i class="glyphicon glyphicon-cog"></i>
+        </div>
+
+
+    </div>
+    <div class="col-md-4 contract-user-detail">
+        <div class="upload text-center">
+            <button class="btn btn-default">UPLOAD LOGO</button>
+        </div>
+
+        <div class="box" *ngFor="let user of contract.users">
+            <h3>
+                {{user.title}}
+                <div class="settings">
+                    <i class="glyphicon glyphicon-cog"></i>
+                </div>
+            </h3>
+            <h6 class="subtitle">
+                Reg.no. {{user.regNo}}
+
+            </h6>
+            <div class="spacer"></div>
+            <h5>
+                {{user.name}}
+
+                <div class="settings">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </div>
+            </h5>
+            <h6 class="subtitle">
+                {{user.about}}
+                <br/>
+                Signatory
+            </h6>
+            <button type="button" class="btn btn-link btn-xs">
+                <i class="glyphicon glyphicon-plus"></i> Add {{user.type}}
+            </button>
+        </div>
+
+
+        <div>
+            <button type="button" class="btn btn-link btn-xs">
+                <i class="glyphicon glyphicon-plus"></i> Add participant in another company
+            </button>
+            <div class="clearfix small-spacer"> </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-success btn-lg col-md-12">
+                    <i class="glyphicon glyphicon-ok"></i> Sign Contract
+                </button>
+            </div>
+            <div class="clearfix small-spacer"></div>
+            <button type="button" class="btn btn-link btn-xs">
+                <i class="glyphicon glyphicon-share-alt"></i> Delegate my signing rights
+            </button>
+            <div class="clearfix small-spacer"></div>
+            <p>The offer is valid untill <u>2017-02-07</u>. (14 days left)</p>
+            <div class="clearfix small-spacer"></div>
+            <button type="button" class="btn btn-link btn-xs">
+                <i class="glyphicon glyphicon-download-alt"></i> Download as PDF
+            </button>
+            <div class="clearfix small-spacer"></div>
+            <h5>
+                <i class="glyphicon glyphicon-tag"></i> Tags
+            </h5>
+            <div class="clearfix"></div>
+            <button type="button" class="btn btn-link btn-xs">
+                <i class="glyphicon glyphicon-plus"></i> Add Tag
+            </button>
+        </div>
+    </div>
+</div>
