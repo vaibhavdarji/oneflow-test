@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Comment } from '../shared/comment/comment';
 import { RestApiService } from '../shared/restapi.service';
+declare var jQuery: any;
 
 @Component({
   selector: 'oneflow-comment',
@@ -20,18 +21,18 @@ export class CommentComponent implements OnInit {
     }
 
     addComment(form: string) {
-        var data = $('#'+ form).serializeArray();
+        var data = jQuery('#'+ form).serializeArray();
         var lastRecord = this.comments[this.comments.length - 1];
         this.comments.push(new Comment(lastRecord.id, this.apiService.subject, 0, data[0]['value'], 'Pradip Caulagi', data[1]['value']));
         this.apiService.subject = '';
-        $('#'+ form).trigger('reset');
+        jQuery('#'+ form).trigger('reset');
     }
 
     onCommentSelect (comment: Comment) {
         if (comment.subject) {
 
             var range = document.createRange();
-            var $descriptionTag = $('.description');
+            var $descriptionTag = jQuery('.description');
             range.setStart($descriptionTag[0].firstChild, $descriptionTag.html().indexOf(comment.subject));
             range.setEnd($descriptionTag[0].firstChild, $descriptionTag.html().indexOf(comment.subject) + comment.subject.length);
             var sel = window.getSelection();

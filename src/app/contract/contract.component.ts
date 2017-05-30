@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Contract } from '../shared/contract/contract';
 import { RestApiService } from '../shared/restapi.service';
+declare var jQuery: any;
+declare var shareSelectedText: any;
 
 @Component({
   selector: 'oneflow-contract',
@@ -19,23 +21,22 @@ export class ContractComponent implements OnInit {
 
     getContract() {
         this.contract = this.apiService.getContract();
-        if (window.hasOwnProperty('shareSelectedText')) {
-            window.shareSelectedText('.description', {
-                tooltipClass: '',    // cool, if you want to customize the tooltip
-                sanitize: true,      // will sanitize the user selection to respect the Twitter Max length (recommended)
-                buttons: [           // services that you want to enable you can add :
-                    'pencil',
-                    'lock',
-                    'heart-empty'
-                ],
-                tooltipTimeout: 250,  //Timeout before that the tooltip appear in ms
-                actions: [this.addComment.bind(this), this.lockComment]
-            });
-        }
+
+        shareSelectedText('.description', {
+            tooltipClass: '',    // cool, if you want to customize the tooltip
+            sanitize: true,      // will sanitize the user selection to respect the Twitter Max length (recommended)
+            buttons: [           // services that you want to enable you can add :
+                'pencil',
+                'lock',
+                'heart-empty'
+            ],
+            tooltipTimeout: 250,  //Timeout before that the tooltip appear in ms
+            actions: [this.addComment.bind(this), this.lockComment]
+        });
     }
 
     addComment () {
-        var offset = $('form#addComment').offset();
+        var offset = jQuery('form#addComment').offset();
 
         this.apiService.subject = window.getSelection().toString();
         window.scrollTo(offset.left, offset.top);
